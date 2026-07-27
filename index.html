@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brewci — Brewing Certainty</title>
+<meta name="description" content="Brewci, a coffee shop in Lahore. Brewing Certainty." />
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css?v=3" />
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<!-- Persistent portal triggers -->
+<div class="portal-nav" aria-hidden="false">
+  <button type="button" class="portal-trigger" id="menu-trigger" data-portal="menu-portal" aria-haspopup="dialog">Menu</button>
+  <button type="button" class="portal-trigger" id="rules-trigger" data-portal="rules-portal" aria-haspopup="dialog">Rules</button>
+</div>
+
+<main id="main-content">
+
+  <!-- S1 — The Blast -->
+  <section id="scene-blast" class="scene scene--pinned" aria-label="Brewci — Brewing Certainty">
+    <div class="scene__stage">
+      <video id="hero-video" class="scene__video" src="assets/a1-hero-color.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+
+      <img class="scene-blast__logo" src="assets/logo.svg" alt="" aria-hidden="true" />
+      <!-- TODO: replace with real logo -->
+
+      <h1 class="headline" aria-label="Brewci">
+        <span class="headline__char" aria-hidden="true">B</span>
+        <span class="headline__char" aria-hidden="true">R</span>
+        <span class="headline__char" aria-hidden="true">E</span>
+        <span class="headline__char" aria-hidden="true">W</span>
+        <span class="headline__char" aria-hidden="true">C</span>
+        <span class="headline__char" aria-hidden="true">I</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- S2 — The Pour -->
+  <section id="scene-pour" class="scene scene--pinned" aria-label="The pour">
+    <h2 class="visually-hidden">The Pour</h2>
+    <div class="scene__stage">
+      <video id="pour-video" class="scene__video" src="assets/a2-pour-color.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+    </div>
+  </section>
+
+  <!-- S3 — The Menu Show: sequential food showcase -->
+  <section id="scene-table" class="scene scene--pinned scene--light" aria-label="Featured menu items">
+    <h2 class="visually-hidden">Featured Menu Items</h2>
+    <div class="scene__stage">
+      <div class="confetti" id="confetti" aria-hidden="true">
+        <span class="confetti__piece confetti__piece--circle confetti__c1" data-side="left" data-x="0" data-y="-260"></span>
+        <span class="confetti__piece confetti__piece--bar confetti__c2" data-side="left" data-x="0" data-y="-160"></span>
+        <span class="confetti__piece confetti__piece--triangle confetti__c3" data-side="left" data-x="0" data-y="-70"></span>
+        <span class="confetti__piece confetti__piece--circle confetti__c4" data-side="left" data-x="0" data-y="20"></span>
+        <span class="confetti__piece confetti__piece--bar confetti__c5" data-side="left" data-x="0" data-y="110"></span>
+        <span class="confetti__piece confetti__piece--triangle confetti__c1" data-side="left" data-x="0" data-y="200"></span>
+        <span class="confetti__piece confetti__piece--circle confetti__c3" data-side="left" data-x="0" data-y="280"></span>
+        <span class="confetti__piece confetti__piece--bar confetti__c1" data-side="right" data-x="0" data-y="-260"></span>
+        <span class="confetti__piece confetti__piece--circle confetti__c2" data-side="right" data-x="0" data-y="-160"></span>
+        <span class="confetti__piece confetti__piece--triangle confetti__c4" data-side="right" data-x="0" data-y="-70"></span>
+        <span class="confetti__piece confetti__piece--bar confetti__c3" data-side="right" data-x="0" data-y="20"></span>
+        <span class="confetti__piece confetti__piece--circle confetti__c5" data-side="right" data-x="0" data-y="110"></span>
+        <span class="confetti__piece confetti__piece--triangle confetti__c2" data-side="right" data-x="0" data-y="200"></span>
+        <span class="confetti__piece confetti__piece--bar confetti__c4" data-side="right" data-x="0" data-y="280"></span>
+      </div>
+
+      <div class="showcase" id="food-showcase">
+        <div class="showcase__item" data-item="0" data-variant="from-right">
+          <p class="showcase__caption">Margherita<span class="showcase__desc">San Marzano tomato, fresh mozzarella, basil</span><span class="showcase__price">Rs 1425</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/pizza-color.png" alt="Margherita pizza" />
+        </div>
+        <div class="showcase__item" data-item="1" data-variant="from-bottom">
+          <p class="showcase__caption">Grilled Chicken<span class="showcase__desc">Crisp greens, house dressing, fries on side</span><span class="showcase__price">Rs 1025</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/sandwich-color.png" alt="Grilled chicken sandwich" />
+        </div>
+        <div class="showcase__item" data-item="2" data-variant="zoom">
+          <p class="showcase__caption">Cappuccino<span class="showcase__desc">Rich espresso, steamed milk</span><span class="showcase__price">Rs 775</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/cup-color.png" alt="Cappuccino" />
+        </div>
+        <div class="showcase__item" data-item="3" data-variant="from-top-left">
+          <p class="showcase__caption">French Toast<span class="showcase__desc">Nutella or Lotus</span><span class="showcase__price">Rs 1450–1550</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/french-toast-color.png" alt="Caramelized French toast" />
+        </div>
+        <div class="showcase__item" data-item="4" data-variant="from-left">
+          <p class="showcase__caption">Pancakes<span class="showcase__desc">Nutella or Lotus</span><span class="showcase__price">Rs 1125–1250</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/pancakes-color.png" alt="Stack of pancakes" />
+        </div>
+        <div class="showcase__item" data-item="5" data-variant="from-top">
+          <p class="showcase__caption">Caesar Salad<span class="showcase__desc">Grilled chicken, croutons, parmesan</span><span class="showcase__price">Rs 775</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/caesar-salad-color.png" alt="Caesar salad" />
+        </div>
+        <div class="showcase__item" data-item="6" data-variant="from-bottom-right">
+          <p class="showcase__caption">NY Cheesecake<span class="showcase__desc">Creamy, rich, classic</span><span class="showcase__price">Rs 650</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/cheesecake-color.png" alt="New York cheesecake" />
+        </div>
+        <div class="showcase__item" data-item="7" data-variant="spin">
+          <p class="showcase__caption">Iced Latte<span class="showcase__desc">Cinnamon, hazelnut, caramel, vanilla, coconut</span><span class="showcase__price">Rs 790</span></p>
+          <div class="showcase__plate" aria-hidden="true"></div>
+          <div class="showcase__shadow" aria-hidden="true"></div>
+          <img src="assets/iced-latte-color.png" alt="Iced latte" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 — The Coffee -->
+  <section id="scene-coffee" class="scene" aria-label="The coffee menu">
+    <img class="beans-texture-bg" src="assets/beans-texture.png" alt="" aria-hidden="true" />
+    <h2>The Coffee</h2>
+    <div class="card-stack">
+      <article class="coffee-card">
+        <h3>Espresso</h3>
+        <p>Dopio — Rs 495</p>
+        <p>Cortado — Rs 650</p>
+        <p>Flat White — Rs 775</p>
+      </article>
+      <article class="coffee-card">
+        <h3>Filter</h3>
+        <p>V60 — Rs 1025</p>
+        <p>Chemex — Rs 1025</p>
+        <p>French Press — Rs 975</p>
+      </article>
+      <article class="coffee-card">
+        <h3>Milk Drinks</h3>
+        <p>Cappuccino — Rs 775</p>
+        <p>Spanish Latte — Rs 875</p>
+        <p>Pistachio Latte — Rs 1075</p>
+      </article>
+    </div>
+    <button type="button" class="portal-trigger portal-trigger--inline" data-portal="menu-portal">View full menu →</button>
+  </section>
+
+  <!-- S5 — Hours & Place -->
+  <section id="scene-hours" class="scene" aria-label="Hours and location">
+    <div class="scene-hours__overlay" aria-hidden="true"></div>
+    <div class="scene-hours__content">
+      <h2>Hours &amp; Place</h2>
+      <p id="open-status" role="status">Checking hours…</p>
+      <ul class="hours-list">
+        <li>Open daily, 8:00 AM – 2:00 AM</li>
+      </ul>
+      <p class="address">
+        <a href="https://www.google.com/maps/search/?api=1&query=90-B+MM+Alam+Road,+Gulberg+III,+Lahore,+Pakistan+54000" target="_blank" rel="noopener noreferrer">
+          <span class="address__number">90-B</span>
+          MM Alam Road, Gulberg III<br />
+          Lahore, Pakistan 54000
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- S6 — Host With Us -->
+  <section id="scene-host" class="scene" aria-label="Host an event with us">
+    <img class="scene-host__logo" src="assets/logo.svg" alt="" aria-hidden="true" />
+    <!-- TODO: replace with real logo -->
+    <h2>Host With Us</h2>
+
+    <form id="event-form" class="event-form" novalidate>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input type="text" id="f-name" name="name" required data-validate autocomplete="name" />
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input type="email" id="f-email" name="email" required data-validate autocomplete="email" />
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-phone">Phone (optional)</label>
+        <input type="tel" id="f-phone" name="phone" autocomplete="tel" />
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-date">Event date</label>
+        <input type="date" id="f-date" name="eventDate" required data-validate />
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-guests">Approximate guest count</label>
+        <input type="number" id="f-guests" name="guestCount" min="1" required data-validate />
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-type">Event type</label>
+        <select id="f-type" name="eventType" required data-validate>
+          <option value="">Select one…</option>
+          <option value="birthday">Birthday</option>
+          <option value="corporate">Corporate</option>
+          <option value="launch">Launch</option>
+          <option value="private-hire">Private hire</option>
+          <option value="other">Other</option>
+        </select>
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <div class="field">
+        <label for="f-message">Message</label>
+        <textarea id="f-message" name="message" required data-validate></textarea>
+        <span class="field__error" role="alert"></span>
+      </div>
+
+      <button type="submit" disabled>Send inquiry</button>
+      <div class="form-error-banner" role="alert" hidden></div>
+    </form>
+
+    <div id="form-success" class="form-success" tabindex="-1" hidden>
+      <h3>Thank you</h3>
+      <p>We've received your inquiry and will be in touch shortly.</p>
+    </div>
+
+    <p class="form-fallback">
+      Prefer email? Reach us directly at
+      <a href="mailto:hello@brewci.pk">hello@brewci.pk</a>
+      or visit us at 90-B MM Alam Road, Gulberg III, Lahore.
+    </p>
+  </section>
+
+</main>
+
+<!-- Menu portal -->
+<div class="portal" id="menu-portal" role="dialog" aria-modal="true" aria-labelledby="menu-portal-title" hidden>
+  <div class="portal__panel" data-lenis-prevent>
+    <button type="button" class="portal__close" data-close-portal aria-label="Close menu">&times;</button>
+    <h2 id="menu-portal-title" class="portal__title">Menu</h2>
+
+    <section class="menu-category">
+      <h3>All Day Breakfast</h3>
+      <ul class="menu-list">
+        <li><div class="menu-item__name">Cream Cheese &amp; Bagel<span>Freshly baked bagel with a side of smooth cream cheese.</span></div><div class="menu-item__price">625</div></li>
+        <li><div class="menu-item__name">Scrambled Egg Toast<span>Rustic toast layered with soft, buttery scrambled eggs.</span></div><div class="menu-item__price">1025</div></li>
+        <li><div class="menu-item__name">Egg Benedict<span>Classic poached eggs, toasted bread, draped in silky hollandaise.</span></div><div class="menu-item__price">1050</div></li>
+        <li><div class="menu-item__name">Breakfast Burrito<span>A hearty wrap brimming with eggs, cheese, chicken, and savory fillings.</span></div><div class="menu-item__price">1275</div></li>
+        <li><div class="menu-item__name">Brewci Royal Breakfast<span>A grand platter of eggs, bread, frankfurters, mushrooms, chicken, pancakes, and wholesome sides fit for a royal morning with a latte of your choice.</span></div><div class="menu-item__price">2425</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Neapolitan Pizzas</h3>
+      <ul class="menu-list">
+        <li><div class="menu-item__name">Margherita<span>A timeless classic with San Marzano tomato, fresh mozzarella, and basil.</span></div><div class="menu-item__price">1425</div></li>
+        <li><div class="menu-item__name">Pollo Affumicato<span>Smoked chicken with creamy mozzarella on an artisanal crust.</span></div><div class="menu-item__price">1475</div></li>
+        <li><div class="menu-item__name">Diavola<span>A fiery delight topped with spicy pepperoni and bubbling cheese.</span></div><div class="menu-item__price">1525</div></li>
+        <li><div class="menu-item__name">Quattro Formaggi<span>An indulgent harmony of four exquisite cheeses on a crisp base.</span></div><div class="menu-item__price">1650</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Pre Plate Appetizers</h3>
+      <ul class="menu-list">
+        <li><div class="menu-item__name">French Fries<span>Hand-cut golden fries, lightly salted and seasoned.</span></div><div class="menu-item__price">625</div></li>
+        <li><div class="menu-item__name">Caesar Salad<span>Crunchy iceberg mixed with tender grilled chicken, crunchy bread croutons, cherry tomatoes, and our signature caesar sauce.</span></div><div class="menu-item__price">775</div></li>
+        <li><div class="menu-item__name">Nugs &amp; Fries<span>Succulent chicken bites served with a side of french fries.</span></div><div class="menu-item__price">725</div></li>
+        <li><div class="menu-item__name">Mac &amp; Cheese Fries<span>A decadent fusion of crispy fries smothered in velvety mac &amp; cheese.</span></div><div class="menu-item__price">925</div></li>
+        <li><div class="menu-item__name">Mozzarella Sticks<span>Golden breaded sticks with a molten mozzarella center, served with a tangy dip.</span></div><div class="menu-item__price">950</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Holy Sandwiches</h3>
+      <ul class="menu-list">
+        <li><div class="menu-item__name">Grilled Chicken<span>Tender grilled chicken layered with crisp greens and house dressing, fries on side.</span></div><div class="menu-item__price">1025</div></li>
+        <li><div class="menu-item__name">Pesto Chicken<span>Juicy chicken, basil pesto, and melted cheese in artisanal bread, fries on side.</span></div><div class="menu-item__price">1125</div></li>
+        <li><div class="menu-item__name">Fajita Chicken<span>Mexican-styled chicken with peppers and cheese in a warm sandwich, fries on side.</span></div><div class="menu-item__price">1075</div></li>
+        <li><div class="menu-item__name">Triple Cheese Melt<span>A luxurious melt of three cheeses and chicken toasted to golden perfection, fries on side.</span></div><div class="menu-item__price">1275</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>The Sweet Tooth</h3>
+      <ul class="menu-list">
+        <li><div class="menu-item__name">Plain Croissant</div><div class="menu-item__price">550</div></li>
+        <li><div class="menu-item__name">Brownie<span>Fudge / Walnut</span></div><div class="menu-item__price">350–425</div></li>
+        <li><div class="menu-item__name">Waffles<span>Nutella / Lotus / Triple Chocolate</span></div><div class="menu-item__price">975–1150</div></li>
+        <li><div class="menu-item__name">Tiramisu</div><div class="menu-item__price">650</div></li>
+        <li><div class="menu-item__name">NY Cheesecake</div><div class="menu-item__price">650</div></li>
+        <li><div class="menu-item__name">Lotus Square</div><div class="menu-item__price">575</div></li>
+        <li><div class="menu-item__name">Brownie Bowl</div><div class="menu-item__price">875</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Hot Brews <span class="menu-category__note">12oz Large Cup</span></h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">Dopio</div><div class="menu-item__price">495</div></li>
+        <li><div class="menu-item__name">Americano</div><div class="menu-item__price">650</div></li>
+        <li><div class="menu-item__name">White Americano</div><div class="menu-item__price">675</div></li>
+        <li><div class="menu-item__name">Cortado</div><div class="menu-item__price">650</div></li>
+        <li><div class="menu-item__name">Picolo</div><div class="menu-item__price">650</div></li>
+        <li><div class="menu-item__name">Macchiato</div><div class="menu-item__price">675</div></li>
+        <li><div class="menu-item__name">Flat White</div><div class="menu-item__price">775</div></li>
+        <li><div class="menu-item__name">Cappuccino</div><div class="menu-item__price">775</div></li>
+        <li><div class="menu-item__name">Latte<span>+150 for cinnamon / hazelnut / caramel / vanilla / coconut</span></div><div class="menu-item__price">775</div></li>
+        <li><div class="menu-item__name">Spanish Latte</div><div class="menu-item__price">875</div></li>
+        <li><div class="menu-item__name">Pistachio Latte</div><div class="menu-item__price">1075</div></li>
+        <li><div class="menu-item__name">Hot Mocha</div><div class="menu-item__price">875</div></li>
+        <li><div class="menu-item__name">Hot Chocolate</div><div class="menu-item__price">875</div></li>
+        <li><div class="menu-item__name">Mint Hot Chocolate</div><div class="menu-item__price">950</div></li>
+        <li><div class="menu-item__name">Choco Noir</div><div class="menu-item__price">1025</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Cold Brews <span class="menu-category__note">16oz Tall Cup</span></h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">Iced Dopio</div><div class="menu-item__price">495</div></li>
+        <li><div class="menu-item__name">Iced Americano</div><div class="menu-item__price">675</div></li>
+        <li><div class="menu-item__name">Iced White Americano</div><div class="menu-item__price">695</div></li>
+        <li><div class="menu-item__name">Orange Americano</div><div class="menu-item__price">725</div></li>
+        <li><div class="menu-item__name">Iced Cappuccino</div><div class="menu-item__price">790</div></li>
+        <li><div class="menu-item__name">Iced Latte<span>Cinnamon / Hazelnut / Caramel / Vanilla / Coconut</span></div><div class="menu-item__price">790</div></li>
+        <li><div class="menu-item__name">Iced Spanish Latte</div><div class="menu-item__price">875</div></li>
+        <li><div class="menu-item__name">Iced Mocha</div><div class="menu-item__price">900</div></li>
+        <li><div class="menu-item__name">Affogato</div><div class="menu-item__price">850</div></li>
+        <li><div class="menu-item__name">Brewci Martini<span>Apple / Peach / Lemon / Pomegranate</span></div><div class="menu-item__price">775</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Blended Brews <span class="menu-category__note">16oz Tall Cup</span></h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">Mocha Frappe</div><div class="menu-item__price">1150</div></li>
+        <li><div class="menu-item__name">Peanut Butter Frappe</div><div class="menu-item__price">1150</div></li>
+        <li><div class="menu-item__name">Lotus Frappe</div><div class="menu-item__price">1150</div></li>
+        <li><div class="menu-item__name">Wild Berry Frappe</div><div class="menu-item__price">1150</div></li>
+        <li><div class="menu-item__name">Mint Chocolate Frappe</div><div class="menu-item__price">1250</div></li>
+        <li><div class="menu-item__name">Pistachio Frappe</div><div class="menu-item__price">1575</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Speciality Filter Brews <span class="menu-category__note">16oz Tall Cup</span></h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">V60</div><div class="menu-item__price">1025</div></li>
+        <li><div class="menu-item__name">Chemex</div><div class="menu-item__price">1025</div></li>
+        <li><div class="menu-item__name">Cold Brew</div><div class="menu-item__price">975</div></li>
+        <li><div class="menu-item__name">Nitro Cold Brew</div><div class="menu-item__price">1025</div></li>
+        <li><div class="menu-item__name">French Press</div><div class="menu-item__price">975</div></li>
+        <li><div class="menu-item__name">Aeropress</div><div class="menu-item__price">975</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>Yoocha Matcha <span class="menu-category__note">Ceremonial Grade</span></h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">Hot Matcha Latte<span>Cinnamon / Hazelnut / Caramel</span></div><div class="menu-item__price">975</div></li>
+        <li><div class="menu-item__name">Iced Matcha Latte<span>Cinnamon / Hazelnut / Caramel / Vanilla</span></div><div class="menu-item__price">975</div></li>
+        <li><div class="menu-item__name">Matcha Special<span>Mango / Strawberry / Wildberry</span></div><div class="menu-item__price">1050</div></li>
+        <li><div class="menu-item__name">Dirty Matcha</div><div class="menu-item__price">1250</div></li>
+      </ul>
+    </section>
+
+    <section class="menu-category">
+      <h3>No Brews</h3>
+      <ul class="menu-list menu-list--compact">
+        <li><div class="menu-item__name">Water</div><div class="menu-item__price">110</div></li>
+        <li><div class="menu-item__name">Sparkling Water</div><div class="menu-item__price">175</div></li>
+        <li><div class="menu-item__name">Iced Tea<span>Peach / Lemon</span></div><div class="menu-item__price">725</div></li>
+        <li><div class="menu-item__name">Hibiscus</div><div class="menu-item__price">775</div></li>
+        <li><div class="menu-item__name">Cascara</div><div class="menu-item__price">875</div></li>
+        <li><div class="menu-item__name">Mixed Tea</div><div class="menu-item__price">525</div></li>
+        <li><div class="menu-item__name">Soft Drink</div><div class="menu-item__price">220</div></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<!-- Rules portal -->
+<div class="portal" id="rules-portal" role="dialog" aria-modal="true" aria-labelledby="rules-portal-title" hidden>
+  <div class="portal__panel portal__panel--rules" data-lenis-prevent>
+    <button type="button" class="portal__close" data-close-portal aria-label="Close rules">&times;</button>
+    <h2 id="rules-portal-title" class="portal__title">Brewci — Important Announcement</h2>
+    <div class="rules-text">
+      <p>Multiple occurrences have come to our attention that are a direct violation of our café rules in ensuring a proper and safe environment for our patrons. All customers are welcome to enjoy the services and atmosphere of Brewci. However, it is important that every customer that visits is mindful of the rules and decorum of the place. Through CCTV footage, we have found evidence containing multiple violations that show extreme misconduct and inappropriate behavior that breaches the morals of our society.</p>
+      <p>Brewci is a place built for authentic coffee lovers, families and women of all ages, all of whom have the right to feel safe and enjoy their surroundings without their sentiments getting hurt.</p>
+      <p>Therefore, moving forward, in the event of any such incident, the person(s) involved will calmly be asked to leave the premises. No excuses or explanations will be entertained in their favor.</p>
+      <p>Let's keep Brewci a place that everyone can call their second home and feel safe and empowered in.</p>
+      <p>Thank you for your understanding.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.17/dist/lenis.min.js"></script>
+<script src="js/config.js?v=3"></script>
+<script src="js/portals.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
