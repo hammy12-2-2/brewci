@@ -53,44 +53,29 @@
 
     ensurePlaying(video);
 
-    gsap.matchMedia().add(
-      {
-        isDesktop: '(min-width: 768px)',
-        isMobile: '(max-width: 767px)',
-      },
-      (context) => {
-        const { isDesktop } = context.conditions;
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: '+=' + (cfg.vh - 100) + '%',
+      pin: true,
+      scrub: cfg.scrub,
+      onUpdate: (self) => {
+        const p = self.progress;
 
-        if (isDesktop) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            end: '+=' + (cfg.vh - 100) + '%',
-            pin: true,
-            scrub: cfg.scrub,
-            onUpdate: (self) => {
-              const p = self.progress;
-
-              if (p >= cfg.logoIntroAt) {
-                const logoP = gsap.utils.clamp(0, 1, p / cfg.logoScaleOutAt);
-                gsap.set(logo, { opacity: 1 - logoP, scale: 1 + logoP * 1.4 });
-              }
-
-              if (p >= cfg.headlineWipeAt) {
-                const wipeP = gsap.utils.clamp(0, 1, (p - cfg.headlineWipeAt) / 0.15);
-                chars.forEach((el, i) => {
-                  const charP = gsap.utils.clamp(0, 1, wipeP * chars.length - i);
-                  gsap.set(el, { yPercent: 110 * (1 - charP), opacity: charP });
-                });
-              }
-            },
-          });
-        } else {
-          gsap.set(chars, { yPercent: 0, opacity: 1 });
-          gsap.set(logo, { opacity: 0 });
+        if (p >= cfg.logoIntroAt) {
+          const logoP = gsap.utils.clamp(0, 1, p / cfg.logoScaleOutAt);
+          gsap.set(logo, { opacity: 1 - logoP, scale: 1 + logoP * 1.4 });
         }
-      }
-    );
+
+        if (p >= cfg.headlineWipeAt) {
+          const wipeP = gsap.utils.clamp(0, 1, (p - cfg.headlineWipeAt) / 0.15);
+          chars.forEach((el, i) => {
+            const charP = gsap.utils.clamp(0, 1, wipeP * chars.length - i);
+            gsap.set(el, { yPercent: 110 * (1 - charP), opacity: charP });
+          });
+        }
+      },
+    });
   }
 
   // ---------------------------------------------------------------- S2
@@ -107,21 +92,13 @@
 
     ensurePlaying(video);
 
-    gsap.matchMedia().add(
-      { isDesktop: '(min-width: 768px)', isMobile: '(max-width: 767px)' },
-      (context) => {
-        const { isDesktop } = context.conditions;
-        if (isDesktop) {
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            end: '+=' + (cfg.vh - 100) + '%',
-            pin: true,
-            scrub: cfg.scrub,
-          });
-        }
-      }
-    );
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: '+=' + (cfg.vh - 100) + '%',
+      pin: true,
+      scrub: cfg.scrub,
+    });
   }
 
   // ---------------------------------------------------------------- S3
@@ -197,46 +174,24 @@
       return;
     }
 
-    gsap.matchMedia().add(
-      { isDesktop: '(min-width: 768px)', isMobile: '(max-width: 767px)' },
-      (context) => {
-        const { isDesktop } = context.conditions;
+    items.forEach((el, i) => placeItem(el, i));
+    placeConfetti(1);
 
-        if (isDesktop) {
-          items.forEach((el, i) => placeItem(el, i));
-          placeConfetti(1);
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: '+=' + (cfg.vh - 100) + '%',
+      pin: true,
+      scrub: cfg.scrub,
+      onUpdate: (self) => {
+        const p = self.progress;
+        const continuous = p * (N - 1);
+        items.forEach((el, i) => placeItem(el, i - continuous));
 
-          ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            end: '+=' + (cfg.vh - 100) + '%',
-            pin: true,
-            scrub: cfg.scrub,
-            onUpdate: (self) => {
-              const p = self.progress;
-              const continuous = p * (N - 1);
-              items.forEach((el, i) => placeItem(el, i - continuous));
-
-              const distToNearest = Math.abs(continuous - Math.round(continuous));
-              placeConfetti(gsap.utils.clamp(0, 1, 1 - distToNearest / 0.35));
-            },
-          });
-        } else {
-          gsap.set(items, { opacity: 0, y: 40, x: 0, xPercent: 0, yPercent: 0, scale: 1, rotate: 0 });
-          items.forEach((el) => gsap.set(el.querySelector('.showcase__shadow'), { opacity: 1 }));
-          placeConfetti(0);
-
-          gsap.to(items, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: CONFIG.easing.entrance,
-            scrollTrigger: { trigger: section, start: 'top 70%' },
-          });
-        }
-      }
-    );
+        const distToNearest = Math.abs(continuous - Math.round(continuous));
+        placeConfetti(gsap.utils.clamp(0, 1, 1 - distToNearest / 0.35));
+      },
+    });
   }
 
   // ---------------------------------------------------------------- S4

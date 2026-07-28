@@ -557,41 +557,6 @@ img {
 }
 
 /* -------------------------------------------------------- responsive */
-@media (max-width: 767px) {
-  .scene--pinned {
-    height: auto;
-    min-height: 100dvh;
-  }
-  .scene__stage {
-    position: relative;
-    height: auto;
-    min-height: 100dvh;
-    flex-direction: column;
-    padding: 3rem 1.5rem;
-    gap: 1.5rem;
-  }
-  .showcase {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    perspective: none;
-  }
-  .showcase__item {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 70%;
-  }
-  .showcase__item img {
-    transform: none;
-  }
-  #scene-table .scene__stage {
-    padding-top: 6rem;
-  }
-}
-
 /* ------------------------------------------------------------ portals */
 .portal-nav {
   position: fixed;

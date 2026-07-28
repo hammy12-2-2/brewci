@@ -33,9 +33,15 @@ formula in each scene's `ScrollTrigger.create` is `end: '+=' + (cfg.vh -
 element's own natural height *plus* the configured pin duration, so
 subtracting 100 keeps the total on-screen scroll distance equal to `cfg.vh`.
 
-On mobile (`max-width: 767px`, via `gsap.matchMedia()`), S1–S3 drop pinning
-entirely in favor of simple fade/rise one-shot reveals. `prefers-reduced-motion:
-reduce` skips all scroll-driven animation; every scene renders its end state
+The pinned/scrub scenes (S1–S3) run identically on every device and screen
+size — there's no separate stripped-down mobile fallback. Layout adapts via
+plain responsive CSS (`clamp()` font sizes, `vw`-relative sizing, a couple of
+cosmetic breakpoints for portal padding), while the animation logic itself
+is device-agnostic. This only works because the media assets are small
+(~400KB–1MB each, see "Where to swap each asset" below) — the original
+Higgsfield exports were 6-8MB each and would make this approach painful on
+mobile connections. `prefers-reduced-motion: reduce` skips all scroll-driven
+animation regardless of device; every scene renders its end state
 immediately.
 
 ### S1 — The Blast
